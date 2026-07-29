@@ -1,0 +1,276 @@
+/* NumIQ — shared stylesheet for About / Privacy Policy / Terms of Service.
+   Brand palette from NumIQ_Logo.html: navy #1A3A5C, blue #2563EB, amber #F59E0B. */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #1A3A5C;
+  --blue: #2563EB;
+  --blue-light: #60A5FA;
+  --amber: #F59E0B;
+  --bg: #0B1626;
+  --bg-elevated: #0F1F35;
+  --card: #142943;
+  --card-border: #223A5A;
+  --text-1: #F1F6FC;
+  --text-2: #A9BCD4;
+  --text-3: #6E85A3;
+  --success: #22C55E;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 800px 500px at 15% -10%, rgba(37, 99, 235, 0.16), transparent),
+    radial-gradient(ellipse 700px 500px at 100% 0%, rgba(245, 158, 11, 0.08), transparent);
+  background-attachment: fixed;
+  color: var(--text-1);
+  font-family: 'Manrope', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .brand-word {
+  font-family: 'Sora', 'Manrope', sans-serif;
+}
+
+a { color: var(--blue-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Top nav ─────────────────────────────────────────────────────────── */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(11, 22, 38, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text-1);
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--navy);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.brand-icon svg { width: 20px; height: 20px; }
+
+.brand-word .accent { color: var(--blue-light); }
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.nav-links a { color: var(--text-2); }
+.nav-links a.current { color: var(--amber); }
+
+/* ── Layout ──────────────────────────────────────────────────────────── */
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 20px 100px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+h1.page-title {
+  font-size: clamp(28px, 6vw, 42px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  color: var(--text-1);
+}
+
+.subtitle {
+  color: var(--text-2);
+  font-size: 15px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.meta-line {
+  color: var(--text-3);
+  font-size: 12.5px;
+  margin-top: 14px;
+}
+
+/* ── Cards / sections ────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  margin-bottom: 16px;
+}
+
+section.legal-section {
+  margin-bottom: 30px;
+}
+section.legal-section:last-child { margin-bottom: 0; }
+
+h2.section-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-1);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h2.section-title .num {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--blue-light);
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+p { color: var(--text-2); margin: 0 0 12px; font-size: 14.5px; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { color: var(--text-2); font-size: 14.5px; padding-left: 20px; margin: 0 0 12px; }
+li { margin-bottom: 6px; }
+li:last-child { margin-bottom: 0; }
+
+strong { color: var(--text-1); font-weight: 700; }
+
+.callout {
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  margin: 14px 0;
+}
+.callout.amber {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+.callout strong { color: var(--text-1); }
+
+/* ── Feature grid (About page) ──────────────────────────────────────── */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+@media (max-width: 480px) {
+  .feature-grid { grid-template-columns: 1fr; }
+}
+.feature-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+.feature-icon { font-size: 24px; margin-bottom: 8px; }
+.feature-label { font-size: 13px; font-weight: 700; color: var(--text-1); margin-bottom: 3px; }
+.feature-sub { font-size: 12px; color: var(--text-3); }
+
+/* ── Table of contents ───────────────────────────────────────────────── */
+.toc {
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+.toc-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 10px;
+}
+.toc ol {
+  columns: 2;
+  padding-left: 18px;
+  font-size: 13px;
+}
+@media (max-width: 480px) { .toc ol { columns: 1; } }
+.toc a { color: var(--text-2); }
+.toc a:hover { color: var(--blue-light); }
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 40px 20px 60px;
+  color: var(--text-3);
+  font-size: 12.5px;
+}
+footer a { color: var(--text-3); }
+footer .footer-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── Back to top ─────────────────────────────────────────────────────── */
+.back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 30px;
+  color: var(--text-3);
+  font-size: 12.5px;
+  font-weight: 600;
+}
