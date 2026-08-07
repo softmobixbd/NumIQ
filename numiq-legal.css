@@ -263,6 +263,24 @@ footer .footer-links {
   margin-bottom: 14px;
   flex-wrap: wrap;
 }
+footer .footer-company {
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+footer .footer-company a { text-decoration: underline; }
+
+/* ── Company / contact details block ─────────────────────────────────── */
+.callout code,
+.meta-line code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+}
+.company-block { line-height: 1.9; }
+.company-block .company-name {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
 
 /* ── Back to top ─────────────────────────────────────────────────────── */
 .back-top {
